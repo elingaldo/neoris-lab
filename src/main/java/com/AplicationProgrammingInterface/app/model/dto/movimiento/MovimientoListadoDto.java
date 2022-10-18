@@ -15,5 +15,6 @@ public class MovimientoListadoDto {
 	
 	private Date fechaInicio;
 	private Date fechaFin;
+	private Long idCliente;
 	
 }

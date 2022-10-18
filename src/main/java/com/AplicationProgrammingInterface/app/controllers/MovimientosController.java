@@ -1,5 +1,7 @@
 package com.AplicationProgrammingInterface.app.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +41,12 @@ public class MovimientosController {
 		return new ResponseEntity<>(mapperService.mapperMovimientoDtoToMovimiento(movimiento), HttpStatus.OK);
 	}
 	
-	/*@GetMapping("/listado")
-	public ResponseEntity<?> listado(@Valid @RequestBody MovimientoListadoDto movimientoListadoDto){
-		return new ResponseEntity<?>(HttpStatus.OK);
-	}*/
+	@GetMapping("/listado")
+	public ResponseEntity<List<Movimiento>> listado(@Valid @RequestBody MovimientoListadoDto movimientoListadoDto){
+		return new ResponseEntity<>(movimientoService.listado(movimientoListadoDto.getIdCliente(), movimientoListadoDto.getFechaInicio(), movimientoListadoDto.getFechaFin()), HttpStatus.OK);
+	}
 	
 
 }
+
+

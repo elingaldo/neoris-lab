@@ -1,7 +1,7 @@
 package com.AplicationProgrammingInterface.app.model.dto.movimiento;
 
-import java.util.Date;
 
+import javax.validation.constraints.NotEmpty;
 
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaNumeroDto;
 
@@ -14,7 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MovimientoDto {
 	
+	@NotEmpty(message = "tipo movimiento no debe ser nulo")
 	private String tipoMovimiento;
+	
 	private Integer valor; 
 	
 	private CuentaNumeroDto cuenta;

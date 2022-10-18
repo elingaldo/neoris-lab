@@ -17,6 +17,8 @@ public interface MapperService {
 	public Cliente mapperClienteDtoToCliente(ClienteDto clienteDto);
 
 	public ClienteDto mapperClienteToClienteDto(Cliente cliente);
+	
+	public List<ClienteDto> mapperListClienteToListClienteDto(List<Cliente> listCliente);
 
 	//CUENTA
 	public Cuenta mapperCuentaDtoTocuenta(CuentaDto cuentaDto);

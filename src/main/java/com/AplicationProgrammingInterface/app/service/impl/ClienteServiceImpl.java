@@ -1,5 +1,7 @@
 package com.AplicationProgrammingInterface.app.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,16 @@ public class ClienteServiceImpl implements ClienteService {
 	@Override
 	public Cliente save(Cliente cliente) {
 		return clienteRepository.save(cliente);
+	}
+
+	@Override
+	public List<Cliente> listado() {
+		return (List<Cliente>) clienteRepository.findAll();
+	}
+
+	@Override
+	public void delete(Long id) {
+		clienteRepository.deleteById(id);
 	}
 
 }

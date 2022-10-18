@@ -1,5 +1,8 @@
 package com.AplicationProgrammingInterface.app.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -76,5 +79,10 @@ public class MovimientoServiceImpl implements MovimientoService {
 
 	return movimientoRepository.save(movimiento);
 }
+
+	@Override
+	public List<Movimiento> listado(Long idCliente, Date fechaInicio, Date fechaFin) {
+		return  movimientoRepository.findListado(idCliente, fechaInicio, fechaFin);
+	}
 
 }

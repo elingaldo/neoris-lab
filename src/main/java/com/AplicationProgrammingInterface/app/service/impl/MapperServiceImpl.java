@@ -77,4 +77,14 @@ public class MapperServiceImpl implements MapperService {
 		return modelMapper.map(movimiento, MovimientoDto.class);
 	}
 
+	@Override
+	public List<ClienteDto> mapperListClienteToListClienteDto(List<Cliente> listCliente) {
+		ModelMapper modelMapper = new ModelMapper();
+		List<ClienteDto> dtos = listCliente
+				  .stream()
+				  .map(cliente -> modelMapper.map(cliente, ClienteDto.class))
+				  .collect(Collectors.toList());
+		return dtos;
+	}
+
 }
