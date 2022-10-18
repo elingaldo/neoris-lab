@@ -39,11 +39,6 @@ public class MovimientoServiceImpl implements MovimientoService {
 		
 		if(movimientoFind == null) {
 			
-			if(cuenta.getSaldoInicial() == 0) {
-				log.info("Saldo no disponible");
-				throw new Exception("Saldo no disponible");
-			}
-			
 			if(movimiento.getTipoMovimiento() == TipoMovimiento.CREDITO) {
 				//suma
 				movimiento.setSaldo( cuenta.getSaldoInicial() + movimiento.getValor() );
