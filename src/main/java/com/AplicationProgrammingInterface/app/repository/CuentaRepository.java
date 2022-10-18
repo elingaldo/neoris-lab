@@ -5,5 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.AplicationProgrammingInterface.app.model.entity.Cuenta;
 
 public interface CuentaRepository extends CrudRepository<Cuenta, Long> {
+	
+	public Cuenta findByNumeroCuenta(Integer numeroCuenta);
 
 }

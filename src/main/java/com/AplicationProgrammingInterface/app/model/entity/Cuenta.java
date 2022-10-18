@@ -31,7 +31,7 @@ public class Cuenta implements Serializable {
 	private Long Id;
 	private Integer numeroCuenta;
 	private TipoCuenta tipoCuenta;
-	private Double saldoInicial;
+	private Integer saldoInicial;
 	private String estado;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)

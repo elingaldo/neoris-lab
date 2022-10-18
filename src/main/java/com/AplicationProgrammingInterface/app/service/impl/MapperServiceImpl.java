@@ -10,8 +10,10 @@ import com.AplicationProgrammingInterface.app.model.dto.cliente.ClienteDto;
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaDto;
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaDtoClienteId;
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaDtoNombreCliente;
+import com.AplicationProgrammingInterface.app.model.dto.movimiento.MovimientoDto;
 import com.AplicationProgrammingInterface.app.model.entity.Cliente;
 import com.AplicationProgrammingInterface.app.model.entity.Cuenta;
+import com.AplicationProgrammingInterface.app.model.entity.Movimiento;
 import com.AplicationProgrammingInterface.app.service.MapperService;
 
 @Service
@@ -61,6 +63,18 @@ public class MapperServiceImpl implements MapperService {
 	public CuentaDtoClienteId mapperCuentaToCuentaDtoClienteId(Cuenta cuenta) {
 		ModelMapper modelMapper = new ModelMapper();
 		return modelMapper.map(cuenta, CuentaDtoClienteId.class);
+	}
+
+	@Override
+	public Movimiento mapperMovimientoToMovimientoDto(MovimientoDto movimientoDto) {
+		ModelMapper modelMapper = new ModelMapper();
+		return modelMapper.map(movimientoDto, Movimiento.class);
+	}
+
+	@Override
+	public MovimientoDto mapperMovimientoDtoToMovimiento(Movimiento movimiento) {
+		ModelMapper modelMapper = new ModelMapper();
+		return modelMapper.map(movimiento, MovimientoDto.class);
 	}
 
 }

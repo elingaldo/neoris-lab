@@ -9,5 +9,7 @@ public interface CuentaService {
 	public Cuenta save(Cuenta cuenta);
 	
 	public List<Cuenta> list();
+	
+	public Cuenta findbyNumeroCuenta(Integer numeroCuenta);
 
 }

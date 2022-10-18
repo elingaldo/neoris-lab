@@ -29,4 +29,9 @@ public class CuentaServiceImpl implements CuentaService {
 		return (List<Cuenta>) cuentaRepository.findAll();
 	}
 
+	@Override
+	public Cuenta findbyNumeroCuenta(Integer numeroCuenta) {
+		return cuentaRepository.findByNumeroCuenta(numeroCuenta);
+	}
+
 }
