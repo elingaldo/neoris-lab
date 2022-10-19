@@ -16,7 +16,7 @@ public class CuentaServiceImpl implements CuentaService {
 	private CuentaRepository cuentaRepository;
 	
 	@Autowired
-	private CuentaServiceImpl(CuentaRepository cuentaRepository) {
+	public CuentaServiceImpl(CuentaRepository cuentaRepository) {
 		this.cuentaRepository = cuentaRepository;
 	}
 	

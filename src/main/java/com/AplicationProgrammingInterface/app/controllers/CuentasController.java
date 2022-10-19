@@ -20,12 +20,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AplicationProgrammingInterface.app.enu.TipoCuenta;
-import com.AplicationProgrammingInterface.app.model.dto.cliente.ClienteDto;
+
+
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaDto;
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaDtoClienteId;
 import com.AplicationProgrammingInterface.app.model.dto.cuenta.CuentaDtoNombreCliente;
-import com.AplicationProgrammingInterface.app.model.entity.Cliente;
 import com.AplicationProgrammingInterface.app.model.entity.Cuenta;
 import com.AplicationProgrammingInterface.app.service.CuentaService;
 import com.AplicationProgrammingInterface.app.service.MapperService;
@@ -35,13 +34,19 @@ import lombok.NoArgsConstructor;
 
 @RestController
 @RequestMapping("/api/cuenta")
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class CuentasController {
 	
 	private CuentaService cuentaService;
 	
 	private MapperService mapperService;
+	
+	@Autowired
+	public CuentasController(CuentaService cuentaService, MapperService mapperService) {
+		this.cuentaService = cuentaService;
+		this.mapperService = mapperService;
+	}
 	
 	@PostMapping("/guardar")
 	public ResponseEntity<CuentaDtoClienteId> save(@Valid @RequestBody CuentaDto cuentaDto){
