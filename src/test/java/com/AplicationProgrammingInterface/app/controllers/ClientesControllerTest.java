@@ -42,7 +42,7 @@ public class ClientesControllerTest {
 	
 	@BeforeEach
 	public void setup() {
-		clienteDto = new ClienteDto("", "", "", "", true);
+		clienteDto = new ClienteDto(1L, "", "", "", "", true);
 	}
 	
 

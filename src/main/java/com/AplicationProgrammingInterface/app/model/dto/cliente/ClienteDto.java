@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ClienteDto {
 	
+	private Long Id;
+	
 	@NotEmpty(message = "nombre no debe ser nulo")
 	private String nombre;
 	@NotEmpty(message = "direccion no debe ser nulo")

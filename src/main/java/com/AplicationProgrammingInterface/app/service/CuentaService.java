@@ -7,12 +7,12 @@ import com.AplicationProgrammingInterface.app.model.entity.Cuenta;
 
 public interface CuentaService {
 	
-	public Cuenta save(Cuenta cuenta);
+	Cuenta save(Cuenta cuenta);
 	
-	public List<Cuenta> list();
+	List<Cuenta> list();
 	
-	public Cuenta findbyNumeroCuenta(Integer numeroCuenta);
+	Cuenta findbyNumeroCuenta(Integer numeroCuenta);
 	
-	public void delete(Long id) throws SQLIntegrityConstraintViolationException;
+	void delete(Long id) throws SQLIntegrityConstraintViolationException;
 
 }

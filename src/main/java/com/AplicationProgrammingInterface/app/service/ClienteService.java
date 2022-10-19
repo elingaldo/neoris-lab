@@ -7,10 +7,11 @@ import com.AplicationProgrammingInterface.app.model.entity.Cliente;
 
 public interface ClienteService {
 	
-	public Cliente save(Cliente cliente);
+	Cliente save(Cliente cliente);
 	
-	public List<Cliente> listado();
+	List<Cliente> listado();
 	
-	public void delete(Long id) throws SQLIntegrityConstraintViolationException;
+	void delete(Long id) throws SQLIntegrityConstraintViolationException;
 
+	Cliente clientById(Long id);
 }

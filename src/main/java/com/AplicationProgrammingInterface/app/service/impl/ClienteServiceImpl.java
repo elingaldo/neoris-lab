@@ -40,4 +40,9 @@ public class ClienteServiceImpl implements ClienteService {
 		
 	}
 
+	@Override
+	public Cliente clientById(Long id) {
+		return clienteRepository.findById(id).orElse(null);
+	}
+
 }
