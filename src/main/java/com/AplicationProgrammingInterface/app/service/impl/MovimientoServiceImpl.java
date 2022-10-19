@@ -96,4 +96,9 @@ public class MovimientoServiceImpl implements MovimientoService {
 		return movimientoRepository.findById(id).orElse(null);
 	}
 
+	@Override
+	public Movimiento update(Movimiento movimiento) {
+		return movimientoRepository.save(movimiento);
+	}
+
 }

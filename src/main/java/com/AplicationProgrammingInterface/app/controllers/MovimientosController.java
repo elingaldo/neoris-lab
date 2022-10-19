@@ -79,7 +79,7 @@ public class MovimientosController {
 			movimientoDtoActual.setValor(movimientoDto.getValor());
 			movimientoDtoActual.setCuenta(movimientoDto.getCuenta());
 			
-			movimientoService.save(mapperService.mapperMovimientoToMovimientoDto(movimientoDtoActual));
+			movimientoService.update(mapperService.mapperMovimientoToMovimientoDto(movimientoDtoActual));
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al actualizar cliente en la base de datos");
 			response.put("errors", e.getMessage().concat(":").concat(e.getMostSpecificCause().getMessage()));
