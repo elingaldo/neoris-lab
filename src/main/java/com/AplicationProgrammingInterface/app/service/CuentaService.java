@@ -14,5 +14,7 @@ public interface CuentaService {
 	Cuenta findbyNumeroCuenta(Integer numeroCuenta);
 	
 	void delete(Long id) throws SQLIntegrityConstraintViolationException;
+	
+	Cuenta cuentaById(Long id);
 
 }

@@ -73,7 +73,6 @@ public class ClientesController {
 		}
 
 		try {
-			clienteDtoActual.setId(clienteDto.getId());
 			clienteDtoActual.setNombre(clienteDto.getNombre());
 			clienteActual.setDireccion(clienteDto.getDireccion());
 			clienteActual.setTelefono(clienteDto.getTelefono());

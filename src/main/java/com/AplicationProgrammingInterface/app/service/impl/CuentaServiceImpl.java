@@ -45,4 +45,9 @@ public class CuentaServiceImpl implements CuentaService {
 		
 	}
 
+	@Override
+	public Cuenta cuentaById(Long id) {
+		return cuentaRepository.findById(id).orElse(null);
+	}
+
 }

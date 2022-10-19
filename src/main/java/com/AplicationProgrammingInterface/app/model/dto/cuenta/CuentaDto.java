@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CuentaDto {
+	private Long Id;
 	private Integer numeroCuenta;
 	private TipoCuenta tipoCuenta;
 	private Double saldoInicial;
 	private String estado;
 	private ClienteIdDto cliente;
-
 }
