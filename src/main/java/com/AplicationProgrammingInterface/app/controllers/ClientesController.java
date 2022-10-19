@@ -69,18 +69,17 @@ public class ClientesController {
 		if (clienteActual == null) {
 			response.put("mensaje", "Error:, no se pudo editar, El cliente ID: "
 					.concat(id.toString().concat(" no existe en la base de datos")));
-			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.OK);
 		}
 
 		try {
-			clienteActual.setId(clienteDto.getId());
+			clienteDtoActual.setId(clienteDto.getId());
 			clienteDtoActual.setNombre(clienteDto.getNombre());
 			clienteActual.setDireccion(clienteDto.getDireccion());
 			clienteActual.setTelefono(clienteDto.getTelefono());
 			clienteActual.setContrasena(clienteDto.getContrasena());
 			clienteActual.setEstado(clienteDto.getEstado());
 			clienteService.save(mapperService.mapperClienteDtoToCliente(clienteDtoActual));
-
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al actualizar cliente en la base de datos");
 			response.put("errors", e.getMessage().concat(":").concat(e.getMostSpecificCause().getMessage()));
