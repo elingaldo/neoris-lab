@@ -91,4 +91,9 @@ public class MovimientoServiceImpl implements MovimientoService {
 		
 	}
 
+	@Override
+	public Movimiento movimientoById(Long id) {
+		return movimientoRepository.findById(id).orElse(null);
+	}
+
 }

@@ -29,13 +29,9 @@ import com.AplicationProgrammingInterface.app.model.entity.Cuenta;
 import com.AplicationProgrammingInterface.app.service.CuentaService;
 import com.AplicationProgrammingInterface.app.service.MapperService;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @RestController
 @RequestMapping("/api/cuenta")
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class CuentasController {
 	
 	private CuentaService cuentaService;

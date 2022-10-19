@@ -14,5 +14,5 @@ public interface MovimientoService {
 	
 	void delete(Long id) throws SQLIntegrityConstraintViolationException;
 	
-
+	Movimiento movimientoById(Long id);
 }
