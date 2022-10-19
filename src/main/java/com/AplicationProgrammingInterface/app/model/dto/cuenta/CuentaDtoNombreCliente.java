@@ -15,7 +15,7 @@ public class CuentaDtoNombreCliente {
 	private Integer numeroCuenta;
 	private TipoCuenta tipoCuenta;
 	private Double saldoInicial;
-	private String estado;
+	private Boolean estado;
 	private ClienteNombreDto cliente;
 
 }

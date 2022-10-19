@@ -1,5 +1,6 @@
 package com.AplicationProgrammingInterface.app.service.impl;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,13 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public void delete(Long id) {
-		clienteRepository.deleteById(id);
+	public void delete(Long id) throws SQLIntegrityConstraintViolationException {
+		try {
+			clienteRepository.deleteById(id);
+		} catch (Exception e) {
+			throw new SQLIntegrityConstraintViolationException("violacion de llave foranea");
+		}
+		
 	}
 
 }

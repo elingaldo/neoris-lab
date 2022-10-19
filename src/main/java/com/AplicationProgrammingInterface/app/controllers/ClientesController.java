@@ -1,5 +1,6 @@
 package com.AplicationProgrammingInterface.app.controllers;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +50,7 @@ public class ClientesController {
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id){
+	public ResponseEntity<?> delete(@PathVariable Long id) throws SQLIntegrityConstraintViolationException{
 		clienteService.delete(id);
 		Map<String, Object> response = new HashMap<>();
 		response.put("mensaje", "cliente ha sido eliminado con exito");

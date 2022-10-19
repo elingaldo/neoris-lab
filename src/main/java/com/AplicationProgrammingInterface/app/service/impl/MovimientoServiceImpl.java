@@ -1,5 +1,6 @@
 package com.AplicationProgrammingInterface.app.service.impl;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Date;
 import java.util.List;
 
@@ -78,6 +79,16 @@ public class MovimientoServiceImpl implements MovimientoService {
 	@Override
 	public List<Movimiento> listado(Long idCliente, Date fechaInicio, Date fechaFin) {
 		return  movimientoRepository.findListado(idCliente, fechaInicio, fechaFin);
+	}
+
+	@Override
+	public void delete(Long id) throws SQLIntegrityConstraintViolationException {
+		try {
+			movimientoRepository.deleteById(id);
+		} catch (Exception e) {
+			throw new SQLIntegrityConstraintViolationException("violacion de llave foranea");
+		}
+		
 	}
 
 }

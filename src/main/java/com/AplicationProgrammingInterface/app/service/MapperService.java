@@ -12,29 +12,29 @@ import com.AplicationProgrammingInterface.app.model.entity.Cuenta;
 import com.AplicationProgrammingInterface.app.model.entity.Movimiento;
 
 public interface MapperService {
-	
+
 	// CLIENTE
-	public Cliente mapperClienteDtoToCliente(ClienteDto clienteDto);
+	Cliente mapperClienteDtoToCliente(ClienteDto clienteDto);
 
-	public ClienteDto mapperClienteToClienteDto(Cliente cliente);
-	
-	public List<ClienteDto> mapperListClienteToListClienteDto(List<Cliente> listCliente);
+	ClienteDto mapperClienteToClienteDto(Cliente cliente);
 
-	//CUENTA
-	public Cuenta mapperCuentaDtoTocuenta(CuentaDto cuentaDto);
+	List<ClienteDto> mapperListClienteToListClienteDto(List<Cliente> listCliente);
 
-	public CuentaDto mapperCuentaToCuentaDto(Cuenta cuenta);
-	
-	public CuentaDtoNombreCliente mapperCuentaToCuentaDtoNombreCliente(Cuenta cuenta);
-	
-	public CuentaDtoClienteId mapperCuentaToCuentaDtoClienteId(Cuenta cuenta);
-	
-	public List<CuentaDtoNombreCliente> mapperListCuentaToListCuentaDtoNombreCliente(List<Cuenta> listCuenta);
-	
-	//MOVIMIENTO
-	
-	public Movimiento mapperMovimientoToMovimientoDto(MovimientoDto movimientoDto);
-	
-	public MovimientoDto mapperMovimientoDtoToMovimiento(Movimiento movimiento);
+	// CUENTA
+	Cuenta mapperCuentaDtoTocuenta(CuentaDto cuentaDto);
+
+	CuentaDto mapperCuentaToCuentaDto(Cuenta cuenta);
+
+	CuentaDtoNombreCliente mapperCuentaToCuentaDtoNombreCliente(Cuenta cuenta);
+
+	CuentaDtoClienteId mapperCuentaToCuentaDtoClienteId(Cuenta cuenta);
+
+	List<CuentaDtoNombreCliente> mapperListCuentaToListCuentaDtoNombreCliente(List<Cuenta> listCuenta);
+
+	// MOVIMIENTO
+
+	Movimiento mapperMovimientoToMovimientoDto(MovimientoDto movimientoDto);
+
+	MovimientoDto mapperMovimientoDtoToMovimiento(Movimiento movimiento);
 
 }

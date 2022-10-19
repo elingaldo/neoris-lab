@@ -32,7 +32,7 @@ public class Cuenta implements Serializable {
 	private Integer numeroCuenta;
 	private TipoCuenta tipoCuenta;
 	private Integer saldoInicial;
-	private String estado;
+	private Boolean estado;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })

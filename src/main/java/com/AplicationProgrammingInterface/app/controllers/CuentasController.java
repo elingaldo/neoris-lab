@@ -1,13 +1,18 @@
 package com.AplicationProgrammingInterface.app.controllers;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,10 +46,18 @@ public class CuentasController {
 		return new ResponseEntity<>(mapperService.mapperCuentaToCuentaDtoClienteId(cuenta), HttpStatus.OK);
 	}
 	
-	@GetMapping("/lista")
-	public ResponseEntity<List<CuentaDtoNombreCliente>> lista(){
+	@GetMapping("/listado")
+	public ResponseEntity<List<CuentaDtoNombreCliente>> list(){
 		List<Cuenta> cuenta = cuentaService.list();
 		return new ResponseEntity<>(mapperService.mapperListCuentaToListCuentaDtoNombreCliente(cuenta), HttpStatus.OK);
+	}
+	
+	@DeleteMapping("/eliminar/{id}")
+	public ResponseEntity<?> delete(@PathVariable Long id) throws SQLIntegrityConstraintViolationException{
+		cuentaService.delete(id);
+		Map<String, Object> response = new HashMap<>();
+		response.put("mensaje", "cuenta ha sido eliminado con exito");
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
 }
